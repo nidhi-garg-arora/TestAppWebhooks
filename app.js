@@ -1,4 +1,4 @@
-import Express.js
+import express from 'express';
 const express = require('express');
 
 // Create an Express app
