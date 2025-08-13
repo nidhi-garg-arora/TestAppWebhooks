@@ -46,9 +46,11 @@
       response_type: 'code',
       override_default_response_type: true,
       extras: {
-        setup: {},
-        featureType: '<FEATURE_TYPE>',
-        sessionInfoVersion: '3',
+       featureType: "",
+            features: [
+                { name: "whatsapp_embedded_signup" },
+              sessionInfoVersion: 3,
+            version: "v3" 
       }
     });
   }
