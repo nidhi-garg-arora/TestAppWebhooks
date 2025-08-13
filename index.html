@@ -17,10 +17,16 @@
     if (!event.origin.endsWith('facebook.com')) return;
     try {
       const data = JSON.parse(event.data);
-      if (data.type === 'WA_EMBEDDED_SIGNUP') {
-        console.log('message event: ', data); // remove after testing
-        // your code goes here
-      }
+      if (data.type === "WA_EMBEDDED_SIGNUP") {
+            if (data.event === "FINISH") {
+                const { phone_number_id, waba_id } = data.data;
+                console.log(`Phone number ID: ${phone_number_id}, WABA ID: ${waba_id}`);
+            }
+            else {
+                const { current_step } = data.data;
+                console.log(`Cancelled at step: ${current_step}`);
+            }
+        }
     } catch {
       console.log('message event: ', event.data); // remove after testing
       // your code goes here
